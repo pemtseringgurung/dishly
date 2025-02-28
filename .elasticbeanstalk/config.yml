@@ -2,6 +2,10 @@ branch-defaults:
   main:
     environment: dishly
     group_suffix: null
+environment-defaults:
+  dishly:
+    branch: null
+    repository: null
 global:
   application_name: dishly
   branch: null
