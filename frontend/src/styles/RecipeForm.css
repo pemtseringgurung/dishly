@@ -1,0 +1,77 @@
+.recipe-form {
+  margin-top: var(--spacing-xl);
+  background-color: var(--dark);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary);
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.recipe-form h3 {
+  margin-bottom: var(--spacing-lg);
+  color: var(--primary);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--darker);
+  border: 1px solid var(--gray);
+  border-radius: var(--border-radius-sm);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  transition: var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(251, 176, 52, 0.25);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.form-error {
+  color: var(--danger);
+  margin-top: var(--spacing-sm);
+  font-size: 0.9rem;
+}
+
+.add-recipe-button {
+  margin: var(--spacing-lg) auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  background-color: var(--primary);
+  color: var(--text-dark);
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.add-recipe-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}

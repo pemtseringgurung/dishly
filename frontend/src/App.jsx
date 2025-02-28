@@ -3,12 +3,13 @@ import RecipeList from './components/RecipeList'
 import RecipeForm from './components/RecipeForm'
 import axios from 'axios'
 import { API_BASE_URL } from './config'
-import './App.css'
+import './index.css'
 
 const App = () => {
   const [recipes, setRecipes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [showForm, setShowForm] = useState(false)
 
   const fetchRecipes = async () => {
     try {
@@ -35,14 +36,23 @@ const App = () => {
         <p className="tagline">Your personal recipe collection</p>
       </header>
       
-      <RecipeForm triggerRefresh={fetchRecipes} />
-      
       {loading ? (
-        <p>Loading recipes...</p>
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <p>Loading recipes...</p>
+        </div>
       ) : error ? (
         <div className="error">{error}</div>
       ) : (
-        <RecipeList recipes={recipes} fetchRecipes={fetchRecipes} />
+        <>
+          <RecipeList recipes={recipes} fetchRecipes={fetchRecipes} />
+          
+          <button onClick={() => setShowForm(!showForm)} className="add-recipe-button">
+            {showForm ? '−' : '+'} {showForm ? 'Cancel' : 'Add Recipe'}
+          </button>
+          
+          {showForm && <RecipeForm triggerRefresh={fetchRecipes} />}
+        </>
       )}
     </div>
   )
